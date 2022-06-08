@@ -57,7 +57,7 @@ def scrape():
     with open('file.json', 'w') as f:
         json.dump(output_data, f)
     
-    lyrics_df = pd.read_json(r'/Users/chloe/Desktop/webApp copy 4/file.json')
+    lyrics_df = pd.read_json(r'https://github.com/k-song14/lyric_generator/blob/main/file.json')
     for i in range(len(lyrics_df['lyrics'])):
         for j in range(len(lyrics_df['lyrics'][i])):
             lyrics_df['lyrics'][i][j] = re.sub("\[.*\]", "", lyrics_df['lyrics'][i][j])
