@@ -16,7 +16,6 @@ import time
 from itertools import islice
 import re
 import numpy as np
-import tensorflow as tf
 import string
 import os
 # Importing our Scraping Function from the lyrics file
