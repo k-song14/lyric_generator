@@ -60,7 +60,7 @@ def scrape():
     with open('file.json', 'w') as f:
         json.dump(output_data, f)
     
-    lyrics_df = pd.read_json(r'/Users/chloe/Desktop/webApp copy 5/file.json')
+    lyrics_df = pd.read_json("./file.json")
     lyrics_df['lyrics'] = lyrics_df['lyrics'].apply(lambda l: ', '.join(l))
 
     lyrics_input = ' '.join(lyrics_df['lyrics'].apply(lambda t: str(t)))
