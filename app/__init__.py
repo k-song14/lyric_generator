@@ -37,16 +37,13 @@ def index():
 @app.route('/', methods=['POST'])
 def submit():
     if request.method == 'POST':
-        s = request.form['inp'] # Getting the Input Amazon Product URL
+        s = request.form['inp'] # Getting the Input 
         global inp
         inp = s
         
-        # This will remove any existing file with the same name so that the scrapy will not append the data to any previous file.
-                # This will remove any existing file with the same name so that the scrapy will not append the data to any previous file.
-
-        if os.path.exists("<path_to_outputfile.json>"): 
-            os.remove("<path_to_outputfile.json>")
-
+    # This will remove any existing file with the same name so that the scrapy will not append the data to any previous file.
+    if os.path.exists("./webApp/app/file.json"): 
+        os.remove("./webApp/app/file.json")
 
     return redirect(url_for('scrape')) # Passing to the Scrape function
 
@@ -60,7 +57,7 @@ def scrape():
     with open('file.json', 'w') as f:
         json.dump(output_data, f)
     
-    lyrics_df = pd.read_json("./file.json")
+    lyrics_df = pd.read_json('./file.json')
     lyrics_df['lyrics'] = lyrics_df['lyrics'].apply(lambda l: ', '.join(l))
 
     lyrics_input = ' '.join(lyrics_df['lyrics'].apply(lambda t: str(t)))
