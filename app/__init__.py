@@ -19,7 +19,7 @@ import numpy as np
 import string
 import os
 # Importing our Scraping Function from the lyrics file
-from LyricScraper.LyricScraper.spiders.lyrics import LyricSpider
+from lyrics1.lyrics1.spiders.lyrics import LyricSpider
 
 ### stuff from last class
 app = Flask(__name__)
